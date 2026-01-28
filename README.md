@@ -1,0 +1,1 @@
+# static-boot-site
