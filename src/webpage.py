@@ -22,11 +22,13 @@ def generate_page(from_path, template_path, dest_path, basepath):
     template = template.replace("{{ Content }}", html)
     # In generate_page, after you replace the {{ Title }} and {{ Content }}, replace any instances of:
     #href="/ with href="{basepath}
-    template = template.replace('href="/', f'href="{basepath}"')
-    template = template.replace('src="/', f'src="{basepath}"')
-
-    with open(dest_path, "w") as f:
-        f.write(template)
+    template = template.replace('href="/', f'href="{basepath}')
+    template = template.replace('src="/', f'src="{basepath}')
+    
     dest_dir = os.path.dirname(dest_path)
     os.makedirs(dest_dir, exist_ok=True)
+    with open(dest_path, "w") as f:
+        f.write(template)
+
+    
     

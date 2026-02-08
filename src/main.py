@@ -24,9 +24,9 @@ def move_sources(source_dir, dest_folder, is_root=True):
 
 def main():
     import sys
-    basepath = sys.argv[0]
-    if not basepath:
-        basepath = "/"
+    basepath = "/"
+    if len(sys.argv) > 1:
+        basepath = sys.argv[1]
 
     node = TextNode("This is some anchor text", "link", "https://www.boot.dev")
     print(node)
@@ -34,4 +34,4 @@ def main():
     generate_pages_recursive("content", "template.html", "docs", basepath)
 if __name__ == "__main__":
     main()
-    
+
