@@ -14,7 +14,7 @@ class MarkdownType(Enum):
 
 
 def block_to_block_type(block):
-    heading_match = re.match(r"^# (.*)$", block)
+    heading_match = re.match(r"^(#{1,6}) (.*)$", block)
     if heading_match:
         return MarkdownType.HEADING
     elif block.startswith("```"):
