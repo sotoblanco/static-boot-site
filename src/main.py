@@ -30,7 +30,7 @@ def main():
 
     node = TextNode("This is some anchor text", "link", "https://www.boot.dev")
     print(node)
-    move_sources("static", "public")
+    move_sources("static", "docs")
     generate_pages_recursive("content", "template.html", "docs", basepath)
 if __name__ == "__main__":
     main()
